@@ -1,0 +1,15 @@
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\bin\Debug\net9.0\VeeamFolderSync.exe
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\bin\Debug\net9.0\VeeamFolderSync.deps.json
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\bin\Debug\net9.0\VeeamFolderSync.runtimeconfig.json
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\bin\Debug\net9.0\VeeamFolderSync.dll
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\bin\Debug\net9.0\VeeamFolderSync.pdb
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\obj\Debug\net9.0\VeeamFolderSync.GeneratedMSBuildEditorConfig.editorconfig
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\obj\Debug\net9.0\VeeamFolderSync.AssemblyInfoInputs.cache
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\obj\Debug\net9.0\VeeamFolderSync.AssemblyInfo.cs
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\obj\Debug\net9.0\VeeamFolderSync.csproj.CoreCompileInputs.cache
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\obj\Debug\net9.0\VeeamFolderSync.sourcelink.json
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\obj\Debug\net9.0\VeeamFolderSync.dll
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\obj\Debug\net9.0\refint\VeeamFolderSync.dll
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\obj\Debug\net9.0\VeeamFolderSync.pdb
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\obj\Debug\net9.0\VeeamFolderSync.genruntimeconfig.cache
+D:\VeeamProject\VeeamTaskGit\VeeamFolderSync\obj\Debug\net9.0\ref\VeeamFolderSync.dll
