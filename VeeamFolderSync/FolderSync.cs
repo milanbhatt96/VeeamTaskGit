@@ -69,22 +69,48 @@ class FolderSync
 
     private static void SyncFiles()
     {
-        foreach (var file in Directory.GetFiles(sourceFolder, "*", SearchOption.AllDirectories))
+        try
         {
-            string relativePath = file.Substring(sourceFolder.Length + 1);
-            string replicaFilePath = Path.Combine(replicaFolder, relativePath);
-            string replicaDirectory = Path.GetDirectoryName(replicaFilePath);
-
-            //  Code that creates missing folders in the replica folder
-            if (!Directory.Exists(replicaDirectory))
-                Directory.CreateDirectory(replicaDirectory);
-
-            // Code that copies new files to the replica folder
-            if (!File.Exists(replicaFilePath) || File.GetLastWriteTimeUtc(file) > File.GetLastWriteTimeUtc(replicaFilePath))
+            // Copy new and updated files from source to replica
+            foreach (var file in Directory.GetFiles(sourceFolder, "*", SearchOption.AllDirectories))
             {
-                CopyFileWithAttributes(file, replicaFilePath);
-                LogAction($"Copied: {relativePath}");
+                string relativePath = file.Substring(sourceFolder.Length + 1);
+                string replicaFilePath = Path.Combine(replicaFolder, relativePath);
+                string replicaDirectory = Path.GetDirectoryName(replicaFilePath);
+
+                // Ensure the directory exists 
+                //  Code that creates missing folders in the replica folder
+                if (!Directory.Exists(replicaDirectory))
+                {
+                    Directory.CreateDirectory(replicaDirectory);
+                    LogAction("Created directory: " + relativePath);
+                }
+
+                // Check if the file needs to be copied (new or updated)
+                // Code that copies new files to the replica folder
+
+                bool isNewFile = !File.Exists(replicaFilePath);
+
+                if (isNewFile || File.GetLastWriteTimeUtc(file) > File.GetLastWriteTimeUtc(replicaFilePath))
+                {
+                    File.Copy(file, replicaFilePath, true);
+                    // Log correctly based on whether the file is new or updated
+                    if (isNewFile)
+                    {
+                        LogAction($"Copied: {relativePath}");
+                        Console.WriteLine($"Copied: {relativePath}");
+                    }
+                    else
+                    {
+                        LogAction($"Updated: {relativePath}");
+                        Console.WriteLine($"Updated: {relativePath}");
+                    }
+                }
             }
+        }
+        catch (Exception ex)
+        {
+            LogAction("Error: " + ex.Message);
         }
     }
 
